@@ -1,4 +1,4 @@
-package StoreTests;
+package storeTests;
 
 import org.testng.annotations.Test;
 import pages.MainPage;

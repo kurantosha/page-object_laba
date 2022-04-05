@@ -53,40 +53,44 @@ public class RegisterAccountPage extends BasePage {
         return this;
     }
 
-
     // Method for click on RegistrationButton with valid data
     public SuccessRegistrationPage registrationAccount() {
         find(privacyPolicyCheckbox).click();
         find(continueButton).click();
-        // find error message
-        List<WebElement> elements = getDriver().findElements(errorMessageRegistrationField);
-        if (elements.size() > 0) {
-            List<String> errorText = new ArrayList();
-            for (WebElement element : elements) {
-                String text = element.getText();
-                errorText.add(text);
-                System.out.println(errorText);
-            }
-        }
         return new SuccessRegistrationPage();
     }
 
-
     // Method for click on RegistrationButton with invalid data
-    public boolean registrationAccount(String message) {
+    public String registrationAccount(String errorMessage) {
         find(privacyPolicyCheckbox).click();
         find(continueButton).click();
         // find error message
         List<WebElement> elements = getDriver().findElements(errorMessageRegistrationField);
-        if (elements.size() > 0) {
-            List<String> errorText = new ArrayList();
-            for (WebElement element : elements) {
-                String text = element.getText();
-                errorText.add(text);
-            }
-            return errorText.contains(message);
+        List<String> errors = new ArrayList();
+        for (WebElement element : elements) {
+            String error = element.getText();
+            if (!error.equals(errorMessage))
+                errors.add(error);
+            else
+                return errorMessage;
         }
-        return false;
+        return String.valueOf(errors);
     }
 
 }
+
+//    public boolean registrationAccount(String message) {
+//        find(privacyPolicyCheckbox).click();
+//        find(continueButton).click();
+//        // find error message
+//        List<WebElement> elements = getDriver().findElements(errorMessageRegistrationField);
+//        if (elements.size() > 0) {
+//            List<String> errorText = new ArrayList();
+//            for (WebElement element : elements) {
+//                String text = element.getText();
+//                errorText.add(text);
+//            }
+//            return errorText.contains(message);
+//        }
+//        return false;
+//    }

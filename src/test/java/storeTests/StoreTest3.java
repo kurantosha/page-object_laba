@@ -1,4 +1,4 @@
-package StoreTests;
+package storeTests;
 
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
