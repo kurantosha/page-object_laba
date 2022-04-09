@@ -15,7 +15,7 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         BasePage.setDriver(driver);
-        BasePage.getDriver().manage().window().maximize();
+//        BasePage.getDriver().manage().window().maximize();
     }
 
     Faker faker = new Faker();

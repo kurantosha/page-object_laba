@@ -1,7 +1,11 @@
 package storeTests;
 
+import blocks.ProductBlock;
 import org.testng.annotations.Test;
 import pages.MainPage;
+import pages.MonitorsCardsPage;
+
+import java.util.List;
 
 public class StoreTest4 extends BaseTest {
 
@@ -15,8 +19,11 @@ public class StoreTest4 extends BaseTest {
                 .enteredPasswordAs("111002299338844")
                 .clickOnLoginButton()
                 .hoverMouseOverComponentsTopMenuButton()
-                .clickOnMonitorsTopSubMenuButton();
+                .clickOnMonitorsTopSubMenuButton()
+                .clickOnAddToWishList();
 
     }
+
+
 
 }
