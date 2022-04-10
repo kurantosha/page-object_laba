@@ -3,25 +3,16 @@ package pages;
 import org.openqa.selenium.By;
 
 public class LoginAccountPage extends BasePage {
-    private final By emailInputField = By.id("input-email");
-    private final By passwordInputField = By.id("input-password");
-    private final By loginButton = By.xpath("//input[@value='Login']");
 
-    // Enter email for login form
-    public LoginAccountPage enteredEmailAs(String email) {
-        find(emailInputField).sendKeys(email);
-        return this;
-    }
+  private final By emailInputField = By.id("input-email");
+  private final By passwordInputField = By.id("input-password");
+  private final By loginButton = By.xpath("//input[@value='Login']");
 
-    // Enter password for login form
-     public LoginAccountPage enteredPasswordAs(String password) {
-        find(passwordInputField).sendKeys(password);
-        return this;
-    }
-
-    // click on LOGIN button
-    public AccountPage clickOnLoginButton(){
-        find(loginButton).click();
-        return new AccountPage();
-    }
+  // authorisation on site (Login)
+  public AccountPage loginOnSite(String email, String password) {
+    find(emailInputField).sendKeys(email);
+    find(passwordInputField).sendKeys(password);
+    find(loginButton).click();
+    return new AccountPage();
+  }
 }

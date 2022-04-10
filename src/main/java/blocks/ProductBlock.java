@@ -25,8 +25,6 @@ public class ProductBlock {
   private WebElement addToWishListButton;
   private WebElement addCompareProductButton;
 
-  //div[@class='product-thumb']
-
   public ProductBlock(WebElement container) {
     try {
       this.img = container.findElement(By.xpath(".//div[@class='image']/a"));

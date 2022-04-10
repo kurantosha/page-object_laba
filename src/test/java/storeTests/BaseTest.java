@@ -10,19 +10,19 @@ import pages.BasePage;
 
 public class BaseTest {
 
-    @BeforeMethod
-    public void setUp() {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        BasePage.setDriver(driver);
-//        BasePage.getDriver().manage().window().maximize();
-    }
+  @BeforeMethod
+  public void setUp() {
+    WebDriverManager.chromedriver().setup();
+    WebDriver driver = new ChromeDriver();
+    BasePage.setDriver(driver);
+    BasePage.getDriver().manage().window().maximize();
+  }
 
-    Faker faker = new Faker();
+  Faker faker = new Faker();
 
-    @AfterMethod
-    public void closeDriver() {
-        BasePage.getDriver().quit();
-    }
+  @AfterMethod
+  public void closeDriver() {
+    BasePage.getDriver().quit();
+  }
 
 }

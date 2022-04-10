@@ -1,14 +1,10 @@
 package pages;
 
 import blocks.ProductBlock;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class MonitorsCardsPage extends BasePage {
 
@@ -24,21 +20,13 @@ public class MonitorsCardsPage extends BasePage {
     return products;
   }
 
-  public MonitorsCardsPage clickOnAddToWishList() {
-    WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(3));
+  public MonitorsCardsPage clickOnAddToWishList(String nameProduct) {
     List<ProductBlock> products = getProductsFromMonitorCardPage();
-    products.get(0).getAddToWishListButton().click();
-    wait.until(ExpectedConditions.visibilityOfElementLocated(productContainer));
-    products.get(1).getAddToWishListButton().click();
-
+    for (ProductBlock product : products) {
+      if (product.getNameAsString().equals(nameProduct)) {
+        product.getAddToWishListButton().click();
+      }
+    }
     return this;
   }
-
 }
-
-//    for (ProductBlock product : products) {
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(productContainer));
-//        product.getAddToWishListButton().click();
-//        }
-
-
