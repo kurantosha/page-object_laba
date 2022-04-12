@@ -18,7 +18,7 @@ public class BaseTest {
     BasePage.getDriver().manage().window().maximize();
   }
 
-  Faker faker = new Faker();
+  protected Faker faker = new Faker();
 
   @AfterMethod
   public void closeDriver() {

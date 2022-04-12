@@ -21,7 +21,8 @@ public class StoreTest1 extends BaseTest {
         .enteredPhoneAs(faker.phoneNumber().cellPhone())
         .enteredPasswordAs(password)
         .enteredPasswordConfirmAs(password)
-        .registrationAccount()
+        .clickPolicyCheckbox()
+        .clickRegistrationAccountButton()
         .getTextAccountHasBeenCreated();
 
     Assertions.assertThat(actualResultText)

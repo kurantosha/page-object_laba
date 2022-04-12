@@ -54,16 +54,19 @@ public class RegisterAccountPage extends BasePage {
     return this;
   }
 
-  // Method for click on RegistrationButton with valid data
-  public SuccessRegistrationPage registrationAccount() {
+  public RegisterAccountPage clickPolicyCheckbox() {
     find(privacyPolicyCheckbox).click();
+    return this;
+  }
+
+  // Method for click on RegistrationButton with valid data
+  public SuccessRegistrationPage clickRegistrationAccountButton() {
     find(continueButton).click();
     return new SuccessRegistrationPage();
   }
 
   // Method for click on RegistrationButton with invalid data
-  public String registrationAccount(String errorMessage) {
-    find(privacyPolicyCheckbox).click();
+  public String clickRegistrationAccountButton(String errorMessage) {
     find(continueButton).click();
     // find error message
     List<WebElement> elements = getDriver().findElements(errorMessageRegistrationField);

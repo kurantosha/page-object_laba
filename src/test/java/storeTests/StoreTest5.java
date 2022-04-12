@@ -10,6 +10,8 @@ public class StoreTest5 extends BaseTest{
     MainPage mainPage = new MainPage();
     mainPage.openMainPage();
 
+
+
   }
 
 }

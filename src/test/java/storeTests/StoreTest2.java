@@ -20,7 +20,8 @@ public class StoreTest2 extends BaseTest {
         .enteredPhoneAs(faker.phoneNumber().phoneNumber())
         .enteredPasswordAs(password)
         .enteredPasswordConfirmAs(password)
-        .registrationAccount(expectedErrorMessage);
+        .clickPolicyCheckbox()
+        .clickRegistrationAccountButton(expectedErrorMessage);
 
     Assertions.assertThat(actualErrorMessage)
         .as("We are waiting error message: [" + expectedErrorMessage + "], and received text: ["

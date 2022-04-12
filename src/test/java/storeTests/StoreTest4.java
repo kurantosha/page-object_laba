@@ -23,7 +23,7 @@ public class StoreTest4 extends BaseTest {
         .clickOnAddToWishList(product1)
         .clickOnAddToWishList(product2)
         .getHeaderMenuBlock().clickOnWishListMenuButton()
-        .getNamesToWishList();
+        .getNamesFromWishList();
 
     SoftAssertions softAssertions = new SoftAssertions();
     softAssertions.assertThat(namesProductsToWishList.size())

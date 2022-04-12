@@ -20,13 +20,14 @@ public class MyWishListPage extends BasePage {
     return products;
   }
 
-  public List<String> getNamesToWishList() {
+  public List<String> getNamesFromWishList() {
     List<String> namesProductsWishList = new ArrayList<>();
     List<WishListBlock> products = getAllProductsFromWishList();
     for (WishListBlock product : products) {
       namesProductsWishList.add(product.getProductNameAsString());
     }
     return namesProductsWishList;
+
   }
 
 }
